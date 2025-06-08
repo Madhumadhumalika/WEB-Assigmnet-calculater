@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="secondstyle.css">
+    <title>Number Type Checker</title>
+</head>
+<body>
+    <div>
+        <label for="numberInput">Enter a number:</label>
+        <input type="text" id="numberInput">
+        <button onclick="checkNumberType()">Check Type</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function checkNumberType() {
+           
+            let userInput = document.getElementById("numberInput").value;
+
+           
+            let number = parseFloat(userInput);
+
+            
+            let resultElement = document.getElementById("result");
+
+            
+            if (isNaN(number)) {
+                resultElement.textContent = "Invalid input. Please enter a valid number.";
+            } else {
+                
+                if (Number.isInteger(number)) {
+                    resultElement.textContent = number + " is an integer.";
+                } else {
+                    resultElement.textContent = number + " is a float.";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
